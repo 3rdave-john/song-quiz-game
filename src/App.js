@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import logo from './assets/images/logo.svg';
 import './App.css';
-import Quiz from './components/Quiz';
-import Result from './components/Result';
+import Quiz from './components/Quiz/Quiz';
+import Result from './components/Result/Result';
 
 class App extends Component {
   constructor(props) {
