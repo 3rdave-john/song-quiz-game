@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './assets/images/logo.svg';
 import './App.css';
+import Question from './components/Question/Question';
 import Quiz from './components/Quiz/Quiz';
 import Result from './components/Result/Result';
 
@@ -37,6 +38,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Quiz Game</h1>
         </header>
+        <Question content="What is your favourite food?" />
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
