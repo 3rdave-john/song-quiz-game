@@ -1,10 +1,16 @@
 import React from "react";
 import './Result.css';
 
-class Result extends React.Component {
-  render() {
-    return <div>result</div>;
-  }
+function Result(props) {
+  return (
+    <div className="result">
+      You prefer <strong>{props.quizResult}</strong>!
+    </div>
+  );
 }
+
+// Result.propTypes = {
+//   quizResult: React.PropTypes.string.isRequired,
+// };
 
 export default Result;
