@@ -141,7 +141,7 @@ class App extends Component {
         until the setResults get called
         */}
         {this.state.result ? this.renderResult() : this.renderQuiz()}
-        <footer>
+        <footer className="App-footer">
         <img src={footerlogo} className="App-logo" alt="logo" />
         </footer>
       </div>

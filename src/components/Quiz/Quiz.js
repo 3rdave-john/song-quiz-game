@@ -11,9 +11,9 @@ import './Quiz.css';
 
 
 function Quiz(props) {
-  console.log('Quiz props ========>', props)
+  // console.log('Quiz props ========>', props)
   function renderAnswerOptions(key) {
-    console.log('key inside renderAnswerOptipons', key);
+    // console.log('key inside renderAnswerOptipons', key);
     return (
       <AnswerOption
         key={key.content}
@@ -22,6 +22,7 @@ function Quiz(props) {
         answer={props.answer}
         questionId={props.questionId}
         onAnswerSelected={props.onAnswerSelected}
+        answerImage={key.image}
       />
     );
   }
