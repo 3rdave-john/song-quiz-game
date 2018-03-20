@@ -88,19 +88,26 @@ class App extends Component {
   // set results checks to see if the array.length == 1
   // Math.max.apply() should be returning the highest number inside a []
   setResults(result) {
-    if (result.length === 1) {
-      this.setState({ result: result[0] });
-    } else {
-      this.setState({ result: 'Undetermined' });
-    }
+    // console.log('result', result);
+    // if (result.length === 1) {
+    //   this.setState({ result: result[0] });
+    // } else {
+    //   this.setState({ result: 'Undetermined' });
+    // }
+    const randomSongs = ['bold', 'dreamy', 'flirty', 'guilty', 'jaded'];
+    const randomItem = randomSongs[Math.floor(Math.random()*randomSongs.length)];
+    console.log('randomItem', randomItem);
+    this.setState({ result: randomItem });
   }
   // the value selected from handleAnswerSelected
   // this sets the answer
   setUserAnswer(answer) {
+    console.log('setUserAnswer:', answer)
     // This object has the original properties of this.state.answersCount merged with the new answerCount value
     const updatedAnswersCount = update(this.state.answersCount, {
       [answer]: { $apply: currentValue => currentValue + 1 },
     });
+    console.log('updatedAnswersCount', updatedAnswersCount)
     //  We then update the state by assigning the new object with setState
     this.setState({
       answersCount: updatedAnswersCount,
@@ -125,7 +132,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={headerlogo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Quiz Game</h1>
+          {/* <h1 className="App-title">Quiz Game</h1> */}
         </header>
         {/* <Quiz
           answer={this.state.answer}

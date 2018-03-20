@@ -29,11 +29,11 @@ function Quiz(props) {
 
   return (
      <div className="quiz">
-       <QuestionCount
+       {/* <QuestionCount
          counter={props.questionId}
          total={props.questionTotal}
        />
-       <Question content={props.question} />
+       <Question content={props.question} /> */}
        <div className="answerOptions">
          {props.answerOptions.map(renderAnswerOptions)}
        </div>

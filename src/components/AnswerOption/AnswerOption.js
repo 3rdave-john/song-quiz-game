@@ -10,21 +10,28 @@ import './AnswerOption.css';
 function AnswerOption(props) {
   return (
     <div className="answerOption">
-      <input
-        type="radio"
-        className="radioCustomButton"
-        name="radioGroup"
+      {/* <input
+        type="button"
+        // className="radioCustomButton"
+        // name="radioGroup"
         checked={props.answerType === props.answer}
         id={props.answerType}
         value={props.answerType}
         disabled={props.answer}
-        onChange={props.onAnswerSelected}
+        onClick={props.onAnswerSelected}
+      /> */}
+      <img
+        src={assets[props.answerImage]}
+        className="answerOptions__artwork"
+        checked={props.answerType === props.answer}
+        id={props.answerType}
+        value={props.answerType}
+        disabled={props.answer}
+        onClick={props.onAnswerSelected}
       />
-      {/* <img src={props.answerImage} className="answerOptions__artwork" /> */}
-      <img src={assets[props.answerImage]} className="answerOptions__artwork" />
-      <label className="radioCustomLabel" htmlFor={props.answerType}>
+      {/* <label className="radioCustomLabel" htmlFor={props.answerType}>
         {props.answerContent}
-      </label>
+      </label> */}
     </div>
   );
 }
