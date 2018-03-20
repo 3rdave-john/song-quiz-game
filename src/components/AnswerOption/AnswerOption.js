@@ -1,11 +1,15 @@
 import React from 'react';
 import logo from '../../assets/images/question1-1.png';
+// import test from '../../assets/index';
+import assets from '../../assets/index';
+import './AnswerOption.css';
+
 // Composed of list of items, radio button, and label
 // "checked" is a boolean based on the answer selected === answer option type
 
 function AnswerOption(props) {
   return (
-    <div className="answerOptions">
+    <div className="answerOption">
       <input
         type="radio"
         className="radioCustomButton"
@@ -16,9 +20,8 @@ function AnswerOption(props) {
         disabled={props.answer}
         onChange={props.onAnswerSelected}
       />
-      <div className="answerOption"> 
-        <img src={logo} className="answerOptions__artwork" alt="logo" />
-      </div>
+      {/* <img src={props.answerImage} className="answerOptions__artwork" /> */}
+      <img src={assets[props.answerImage]} className="answerOptions__artwork" />
       <label className="radioCustomLabel" htmlFor={props.answerType}>
         {props.answerContent}
       </label>
