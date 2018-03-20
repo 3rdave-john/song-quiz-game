@@ -5,6 +5,7 @@ import Question from './components/Question/Question';
 import Quiz from './components/Quiz/Quiz';
 import Result from './components/Result/Result';
 import quizQuestions from './api/quizQuestions';
+import buzzfeedQuestions from './api/buzzfeedQuestions';
 
 // helpers
 import update from 'react-addons-update';
@@ -29,12 +30,12 @@ class App extends Component {
   }
 
   componentWillMount() {
-    const answerOptions = quizQuestions.map((question) => {
+    const answerOptions = buzzfeedQuestions.map((question) => {
       return question.answers
     });  
     console.log('componentWillMount ====> answerOptions', answerOptions[0]);
     this.setState({
-      question: quizQuestions[0].question,
+      question: buzzfeedQuestions[0].question,
       answerOptions: answerOptions[0]
     });
     console.log('this.state====>', this.state);
@@ -47,7 +48,7 @@ class App extends Component {
         answerOptions={this.state.answerOptions}
         questionId={this.state.questionId}
         question={this.state.question}
-        questionTotal={quizQuestions.length}
+        questionTotal={buzzfeedQuestions.length}
         onAnswerSelected={this.handleAnswerSelected}
       />
     );
@@ -67,8 +68,8 @@ class App extends Component {
     this.setState({
       counter: counter,
       questionId: questionId,
-      question: quizQuestions[counter].question,
-      answerOptions: quizQuestions[counter].answers,
+      question: buzzfeedQuestions[counter].question,
+      answerOptions: buzzfeedQuestions[counter].answers,
       answer: ''
     });
   }
@@ -114,7 +115,7 @@ class App extends Component {
   handleAnswerSelected(event) {
     console.log('handleAnswersSelected=====>', event)
     this.setUserAnswer(event.currentTarget.value);
-    if (this.state.questionId < quizQuestions.length) {
+    if (this.state.questionId < buzzfeedQuestions.length) {
         setTimeout(() => this.setNextQuestion(), 300);
       } else {
         setTimeout(() => this.setResults(this.getResults()), 300);
